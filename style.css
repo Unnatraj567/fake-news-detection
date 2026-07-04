@@ -1,0 +1,1147 @@
+/* ==========================================================
+   Fake News Detection AI
+   Professional UI
+   Author : Raja Raj
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --primary:#3b82f6;
+    --secondary:#8b5cf6;
+    --success:#10b981;
+    --danger:#ef4444;
+
+    --background:#0f172a;
+    --card:#16213e;
+
+    --text:#ffffff;
+    --text-light:#cbd5e1;
+
+    --border:rgba(255,255,255,.08);
+
+    --glass:rgba(255,255,255,.05);
+
+    --shadow:0 20px 50px rgba(0,0,0,.35);
+
+    --radius:20px;
+
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* ================= Scrollbar ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563eb;
+
+}
+
+/* ================= Background ================= */
+
+.bg-circle{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-1;
+
+    opacity:.55;
+
+    animation:float 10s ease-in-out infinite;
+
+}
+
+.circle-1{
+
+    width:350px;
+
+    height:350px;
+
+    background:#2563eb;
+
+    top:-100px;
+
+    left:-120px;
+
+}
+
+.circle-2{
+
+    width:320px;
+
+    height:320px;
+
+    background:#9333ea;
+
+    right:-100px;
+
+    top:150px;
+
+}
+
+.circle-3{
+
+    width:300px;
+
+    height:300px;
+
+    background:#0891b2;
+
+    bottom:-120px;
+
+    left:30%;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ================= Navbar ================= */
+
+.navbar{
+
+    background:rgba(15,23,42,.75);
+
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+
+    border-bottom:1px solid var(--border);
+
+    padding:18px 0;
+
+}
+
+.navbar-brand{
+
+    color:#fff !important;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+.navbar-brand i{
+
+    color:var(--primary);
+
+    margin-right:8px;
+
+}
+
+.nav-link{
+
+    color:#d1d5db !important;
+
+    margin-left:15px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:white !important;
+
+}
+
+/* ================= Hero ================= */
+
+.hero{
+
+    padding:90px 0;
+
+}
+
+.hero h1{
+
+    font-size:3.3rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:1.1rem;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-image{
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.hero-image:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ================= Glass Card ================= */
+
+.glass-card{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ================= Divider ================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:40px 0;
+
+}
+
+.divider span{
+
+    background:var(--background);
+
+    padding:0 15px;
+
+    color:#94a3b8;
+
+    font-weight:600;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ================= Inputs ================= */
+
+.form-control{
+
+    background:#0b1220;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+.form-control:focus{
+
+    background:#0b1220;
+
+    color:white;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 20px rgba(59,130,246,.25);
+
+}
+
+.form-control::placeholder{
+
+    color:#94a3b8;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.btn-primary{
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(59,130,246,.35);
+
+}
+
+.btn-outline-light{
+
+    border-radius:12px;
+
+    padding:10px 22px;
+
+    transition:.3s;
+
+}
+
+.btn-outline-light:hover{
+
+    color:#fff;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* Analyze Button */
+
+.analyze-btn{
+
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:18px 60px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+
+}
+
+.analyze-btn:hover{
+
+    transform:translateY(-6px) scale(1.02);
+
+    box-shadow:0 25px 60px rgba(37,99,235,.45);
+
+}
+
+.analyze-btn i{
+
+    margin-right:10px;
+
+}
+
+/* ==========================================================
+   LOADING CARD
+========================================================== */
+
+.loading-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    text-align:center;
+
+    -webkit-backdrop-filter:blur(20px);
+
+    backdrop-filter:blur(20px);
+
+    margin-bottom:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.loading-card h4{
+
+    margin-top:25px;
+
+    font-weight:600;
+
+}
+
+.spinner-border{
+
+    width:4rem;
+
+    height:4rem;
+
+}
+
+/* ==========================================================
+   RESULT CARDS
+========================================================== */
+
+.result-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    -webkit-backdrop-filter:blur(20px);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.result-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card-header-custom{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.card-header-custom i{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    margin-right:18px;
+
+    font-size:24px;
+
+    color:#fff;
+
+    background:linear-gradient(135deg,#2563eb,#9333ea);
+
+}
+
+.card-header-custom h3{
+
+    font-size:24px;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.result-content{
+
+    color:#d1d5db;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+}
+
+/* ==========================================================
+   SENTIMENT
+========================================================== */
+
+.sentiment-progress{
+
+    height:28px;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    background:#0b1220;
+
+}
+
+.progress-bar{
+
+    font-weight:600;
+
+    transition:width 1.2s ease;
+
+}
+
+/* ==========================================================
+   FEATURE BOX
+========================================================== */
+
+.feature-box{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.07);
+
+}
+
+.feature-box i{
+
+    font-size:40px;
+
+    color:#3b82f6;
+
+    margin-bottom:20px;
+
+}
+
+.feature-box h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.feature-box p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    margin-top:70px;
+
+    padding:50px 0 20px;
+
+    background:#08111f;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.footer p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+.footer hr{
+
+    border-color:rgba(255,255,255,.08);
+
+    margin:30px 0;
+
+}
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+.badge{
+
+    font-size:15px;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+}
+
+small{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+.text-primary{
+
+    color:#60a5fa !important;
+
+}
+
+.shadow-lg{
+
+    box-shadow:var(--shadow)!important;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(59,130,246,0);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 35px rgba(59,130,246,.40);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(59,130,246,0);
+
+    }
+
+}
+
+/* Hero Animation */
+
+.hero{
+
+    animation:fadeUp .9s ease;
+
+}
+
+.hero-image{
+
+    animation:zoomIn 1s ease;
+
+}
+
+/* Cards Animation */
+
+.glass-card{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.result-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ==========================================================
+   HOVER EFFECTS
+========================================================== */
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+    transition:.35s;
+
+}
+
+input:hover,
+textarea:hover{
+
+    border-color:#3b82f6;
+
+}
+
+.result-card:hover .card-header-custom i{
+
+    animation:glow 1.5s infinite;
+
+}
+
+.feature-box:hover i{
+
+    transform:rotate(10deg) scale(1.1);
+
+    transition:.35s;
+
+}
+
+.navbar-brand:hover{
+
+    color:#60a5fa !important;
+
+}
+
+.hero .btn-primary{
+
+    animation:glow 2s infinite;
+
+}
+
+/* ==========================================================
+   CHARACTER COUNTER
+========================================================== */
+
+#characterCount{
+
+    font-weight:600;
+
+    color:#94a3b8;
+
+}
+
+/* ==========================================================
+   RESULT TEXT
+========================================================== */
+
+#summaryResult,
+#grammarResult{
+
+    white-space:pre-wrap;
+
+    word-wrap:break-word;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+#sentimentLabel{
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.hero-image{
+
+margin-top:40px;
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.hero{
+
+padding:70px 0;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:2.4rem;
+
+}
+
+.hero-image{
+
+margin-top:50px;
+
+width:85%;
+
+}
+
+.glass-card{
+
+padding:28px;
+
+}
+
+.analyze-btn{
+
+width:100%;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.navbar-brand{
+
+font-size:1.1rem;
+
+}
+
+.hero h1{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.glass-card{
+
+padding:22px;
+
+}
+
+.card-header-custom{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.card-header-custom i{
+
+margin-right:0;
+
+margin-bottom:15px;
+
+}
+
+.result-card{
+
+padding:22px;
+
+}
+
+.footer{
+
+text-align:center;
+
+}
+
+.footer .text-md-end{
+
+text-align:center !important;
+
+margin-top:25px;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:576px){
+
+.hero{
+
+padding:55px 0;
+
+}
+
+.hero h1{
+
+font-size:1.8rem;
+
+}
+
+.form-control{
+
+padding:13px;
+
+font-size:15px;
+
+}
+
+textarea{
+
+height:260px;
+
+}
+
+.analyze-btn{
+
+padding:16px;
+
+font-size:16px;
+
+}
+
+.loading-card{
+
+padding:30px;
+
+}
+
+.spinner-border{
+
+width:3rem;
+
+height:3rem;
+
+}
+
+}
+
+/* ==========================================================
+   EXTRA EFFECTS
+========================================================== */
+
+::selection{
+
+background:#3b82f6;
+
+color:#fff;
+
+}
+
+img{
+
+-webkit-user-select:none;
+user-select:none;
+
+}
+
+button{
+
+outline:none !important;
+
+}
+
+button:focus{
+
+box-shadow:none !important;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+section{
+
+position:relative;
+
+z-index:1;
+
+}
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
